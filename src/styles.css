@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+.time-display{
+  font-size: 2rem;
+  text-align: center;
+  display: block;
+}
+.btn{
+  background-color: #007903;
+  border: none;
+  margin: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 200px;
+}
+.controls{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  padding: 0 20%;
+}
