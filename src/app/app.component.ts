@@ -28,6 +28,10 @@ export class AppComponent implements OnInit{
 
   stopWatchStop() {
     this.subsc.unsubscribe()
+    this.stopWatchReset()
   }
 
+  stopWatchPause() {
+    this.subsc.unsubscribe()
+  }
 }

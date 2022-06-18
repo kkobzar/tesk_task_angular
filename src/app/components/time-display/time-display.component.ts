@@ -19,7 +19,6 @@ export class TimeDisplayComponent implements OnInit {
     return secs >= 10 ? secs.toString() : `0${secs}`
   }
 
-  //get
   getMS():string{
     const ms = this.time - Math.floor(this.time * 0.01) * 100
     return ms >= 10 ? ms.toString() : `0${ms}`
