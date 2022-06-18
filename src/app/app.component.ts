@@ -15,9 +15,11 @@ export class AppComponent implements OnInit{
   }
 
   stopWatchStart() {
-    this.subsc = this.obs.subscribe(() => {
-      this.timer++;
-    })
+    if (typeof this.subsc === 'undefined' || this.subsc.closed){
+      this.subsc = this.obs.subscribe(() => {
+        this.timer++;
+      })
+    }
   }
 
   stopWatchReset() {
