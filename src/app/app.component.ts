@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {interval, Observable} from "rxjs";
+import {interval, Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -10,16 +10,22 @@ export class AppComponent implements OnInit{
   title = 'timer_task';
   timer: number = 0;
   obs: Observable<number> = interval(10)
+  subsc!: Subscription;
   ngOnInit() {
-    this.obs.subscribe(() => {
+  }
+
+  stopWatchStart() {
+    this.subsc = this.obs.subscribe(() => {
       this.timer++;
     })
   }
 
-  stopWatchStart() {
-    this.obs.subscribe(() => {
-      this.timer++;
-    })
+  stopWatchReset() {
+    this.timer = 0;
+  }
+
+  stopWatchStop() {
+    this.subsc.unsubscribe()
   }
 
 }
